@@ -1,0 +1,52 @@
+## Node
+node_modules/
+
+## Python
+__pycache__
+env/
+
+
+## Terraform
+.dist
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+
+
+# C extensions
+*.so
+
+
+## Project
+/media/
+/static/
+local.env
+.env.local
+*.log
+
+
+## OS
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+
+## Editors and IDEs
+.vscode/*
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+.idea/
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+.buildpath
+.project
+.settings
+.pydevproject

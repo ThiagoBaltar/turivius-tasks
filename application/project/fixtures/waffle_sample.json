@@ -1,0 +1,13 @@
+[
+  {
+    "model": "waffle.switch",
+    "pk": 1,
+    "fields": {
+      "name": "always_manifest_invoice",
+      "active": true,
+      "note": "",
+      "created": "2024-04-12 15:51:33+00:00",
+      "modified": "2024-04-12 15:51:33+00:00"
+    }
+  }
+]

@@ -1,0 +1,71 @@
+name: turivius-tasks
+
+services:
+  django-builder:
+    platform: linux/amd64
+    build:
+      context: .
+      args:
+        release: dev
+      target: builder
+    command: sleep 99999999999
+    working_dir: /home/python/project/application
+    volumes:
+      - ./:/home/python/project
+    env_file:
+      - .env.develop
+      - .env.local
+
+  django:
+    platform: linux/amd64
+    build:
+      context: .
+      args:
+        release: dev
+    command: sleep 99999999999
+    volumes:
+      - ./application:/home/python/application
+      - django-media:/home/python/application/media
+      - django-static:/home/python/application/static
+    env_file:
+      - .env.develop
+      - .env.local
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  pgadmin4:
+    image: dpage/pgadmin4:latest
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - PGADMIN_LISTEN_PORT=8081
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+
+volumes:
+  django-media:
+  django-static:
+  postgres-data:
+  pgadmin-data:
+
+
+# https://docs.docker.com/compose/compose-file/06-networks/
+networks:
+  default:
+    name: tasks

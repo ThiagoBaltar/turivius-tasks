@@ -1,0 +1,21 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "uuid": "437991d0-f1c5-47d9-a25b-f2cd7ef064ee",
+            "username": "admin",
+            "email": "admin@admin.com",
+            "password": "pbkdf2_sha256$600000$4m4TSHDb1IVySGv9dwUQUv$WNOh5L50d5ACHUbw/ZzQONcrBfSvBlZ0AMgwf2gkcR8=",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_staff": true,
+            "is_superuser": true,
+            "last_login": null,
+            "date_joined": "2000-01-01T00:00:00.000Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

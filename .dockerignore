@@ -1,0 +1,7 @@
+.DS_Store
+.aws
+.env
+.venv
+
+fixture/*
+**/db.sqlite3
