@@ -77,9 +77,6 @@ logs:
 django-logs:
 	docker compose logs django --follow
 
-clean-queue:
-	docker-compose run --rm django celery -A auth purge --force
-
 loaddata:
 	docker compose run --rm django python manage.py loaddata user_admin
 
