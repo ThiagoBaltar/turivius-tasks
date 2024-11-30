@@ -22,3 +22,8 @@ Finalizar task: http://localhost:8000/api/schema/redoc/#tag/tasks/operation/task
 Resumir task: http://localhost:8000/api/schema/redoc/#tag/tasks/operation/tasks_resume_update
 Deletar task: http://localhost:8000/api/schema/redoc/#tag/tasks/operation/tasks_destroy
 
+Depois de terminar os testes, para liberar espaço na máquina, rode os seguintes comandos, em ordem:
+
+make stop
+make uninstall
+make clean-layers
